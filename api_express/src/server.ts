@@ -18,15 +18,35 @@ async function conectarBD() {
 
 conectarBD();
 
+// const corsOptions: CorsOptions = {
+//   origin: function (origin, callback) {
+//     if (origin === process.env.FRONTEND_URL) {
+//       callback(null, true);
+//     } else {
+//       callback(new Error("Error CORS"), false);
+//     }
+//   },
+// };
+
 const corsOptions: CorsOptions = {
   origin: function (origin, callback) {
-    if (origin === process.env.FRONTEND_URL) {
-      callback(null, true);
-    } else {
-      callback(new Error("Error CORS"), false);
+    // 1) Permite peticiones sin cabecera Origin (Postman, cURL, etc.)
+    if (!origin) {
+      return callback(null, true);
     }
+    // 2) Permite sólo tu frontend en producción
+    if (origin === process.env.FRONTEND_URL) {
+      return callback(null, true);
+    }
+    // 3) Cualquier otro origen se rechaza
+    callback(new Error("Error CORS"));
   },
+  optionsSuccessStatus: 200,
 };
+
+// Habilita CORS para todas las rutas y el preflight
+// server.use(cors(corsOptions));
+// server.options("", cors(corsOptions));
 
 server.use(cors(corsOptions));
 

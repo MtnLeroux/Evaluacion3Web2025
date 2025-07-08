@@ -1,4 +1,4 @@
-import { date, number, object, string } from "valibot";
+import { array, date, number, object, string, type InferOutput } from "valibot";
 
 export const ArriendoMostrarSchema = object({
   id: number(),
@@ -8,3 +8,7 @@ export const ArriendoMostrarSchema = object({
   rutCliente: string(),
   nombreCliente: string(),
 });
+
+export const ArriendosMostrarSchema = array(ArriendoMostrarSchema);
+
+export type ArriendoMostrar = InferOutput<typeof ArriendoMostrarSchema>;
