@@ -3,7 +3,7 @@ export default function NavBar() {
     <nav className="navbar navbar-expand-lg bg-warning">
       <div className="container-fluid">
         <a className="navbar-brand" href="#">
-          Sistema Productos
+          Sistema de Arriendos
         </a>
         <button
           className="navbar-toggler"
@@ -18,14 +18,19 @@ export default function NavBar() {
         </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-            <li className="nav-item active">
+            <li className="nav-item">
               <a className="nav-link" aria-current="page" href="#">
-                Inicio
+                Arriendos
               </a>
             </li>
             <li className="nav-item">
               <a className="nav-link" aria-current="page" href="#">
-                Arriendos
+                Cambiar Contraseña
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" aria-current="page" href="#">
+                Cerrar Sesion
               </a>
             </li>
           </ul>
