@@ -1,5 +1,5 @@
 {
-  "name": "api_express",
+  "name": "api_trabajo",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -15,6 +15,11 @@
     "typescript": "^5.8.3"
   },
   "dependencies": {
-    "express": "^5.1.0"
+    "cors": "^2.8.5",
+    "dotenv": "^17.0.1",
+    "express": "^5.1.0",
+    "mysql2": "^3.14.1",
+    "sequelize": "^6.37.7",
+    "sequelize-typescript": "^2.1.6"
   }
 }
