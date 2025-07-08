@@ -5,12 +5,13 @@ import {
   getArriendos,
   getMayorArriendo,
 } from "./handlers/arriendos";
-import { login } from "./handlers/usuarios";
+import { crearUsuario, login } from "./handlers/usuarios";
 import { verificarToken } from "./middleware/verificarToken";
 
 const router = Router();
 
 router.post("/login", login);
+router.post("/usuarios", crearUsuario);
 
 router.use(verificarToken);
 
